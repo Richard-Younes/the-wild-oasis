@@ -4,11 +4,7 @@ import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import Button from './ui/Button';
 import Input from './ui/Input';
-
-const H1 = styled.h1`
-	font-size: 30px;
-	font-weight: 600;
-`;
+import Heading from './ui/Heading';
 
 const StyledApp = styled.main`
 	background-color: orangered;
@@ -21,8 +17,15 @@ function App() {
 			<GlobalStyles />
 			<StyledApp>
 				<p>Hiehfihiub eubi qwbwbq iubqw i</p>
-				<H1>Hello world</H1>
+
+				<Heading as='h1'>Hello world</Heading>
+
+				<Heading as='h2'>Check in and out</Heading>
+
 				<Button onClick={() => alert('Check in')}>Check in</Button>
+
+				<Heading as='h3'>Form</Heading>
+
 				<Input type='number' placeholder='Number of guests' />
 			</StyledApp>
 		</>
