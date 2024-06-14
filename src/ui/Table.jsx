@@ -90,7 +90,11 @@ function Row({ children }) {
 	);
 }
 
-function Body({ children }) {}
+function Body({ render, data }) {
+	if (data.length === 0) return <Empty>No data available</Empty>;
+
+	return <StyledBody>{data.map(render)}</StyledBody>;
+}
 
 Table.Header = Header;
 Table.Row = Row;

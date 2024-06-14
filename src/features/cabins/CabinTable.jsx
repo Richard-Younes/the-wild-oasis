@@ -32,6 +32,7 @@ function CabinTable() {
 	const { isLoading, cabins } = useCabins();
 
 	if (isLoading) return <Spinner />;
+	let x = [];
 
 	return (
 		<Table columns='0.6fr 1.8fr 2.2fr 1fr 1fr 1fr'>
@@ -44,9 +45,10 @@ function CabinTable() {
 				<div></div>
 			</Table.Header>
 
-			{cabins.map((cabin) => (
-				<CabinRow key={cabin.id} cabin={cabin} />
-			))}
+			<Table.Body
+				data={cabins}
+				render={(cabin) => <CabinRow key={cabin.id} cabin={cabin} />}
+			/>
 		</Table>
 	);
 }
