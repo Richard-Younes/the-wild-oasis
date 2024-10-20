@@ -162,8 +162,8 @@ function DurationChart({ confirmedStays }) {
 						cx='40%'
 						cy='50%'
 						paddingAngle={3}>
-						{data.map((entry) => (
-							<Cell fill={entry.color} stroke={entry.color} />
+						{data.map((entry, i) => (
+							<Cell fill={entry.color} stroke={entry.color} key={i} />
 						))}
 					</Pie>
 					<Tooltip />
